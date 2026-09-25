@@ -10,6 +10,8 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
     private int minutes;
 
     public TimeOfDay(int hours, int minutes) {
+        if (hours < 0 || hours > 23) throw new IllegalArgumentException("Часы вне допустимого диапазона");
+        if (minutes < 0 || minutes > 59) throw new IllegalArgumentException("Минуты вне допустимого диапазона");
         this.hours = hours;
         this.minutes = minutes;
     }
